@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "RapData-Ui"
+  "defaultProject": "RapData-Ui",
+  "cli": {
+    "analytics": false
+  }
 }
