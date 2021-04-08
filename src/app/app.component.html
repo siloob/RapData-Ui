@@ -16,9 +16,14 @@
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
           <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white">
-            <span class="sr-only">View notifications</span>
-            <!-- Heroicon name: outline/bell -->
-              <a class="rounded-full py-3 px-4 uppercase text-xs font-bold cursor-pointer tracking-wider text-green-500 border-green-500 border-2 hover:bg-green-500 hover:text-white transition ease-out duration-700" (click)="goTo(5)">Log in</a>
+              <a class="rounded-full py-3 px-4 uppercase text-xs font-bold cursor-pointer tracking-wider text-green-500 border-green-500 border-2 hover:bg-green-500 hover:text-white transition ease-out duration-700" (click)="goTo(5)">
+                Log in
+              </a>
+          </button>
+          <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white">
+            <a class="rounded-full py-3 px-4 uppercase text-xs font-bold cursor-pointer tracking-wider text-green-500 border-green-500 border-2 hover:bg-green-500 hover:text-white transition ease-out duration-700" (click)="goTo(6)">
+              Sign Up
+            </a>
           </button>
         </div>
       </div>
@@ -31,6 +36,7 @@
     <a *ngSwitchCase="3"> <app-tarif></app-tarif> </a>
     <a *ngSwitchCase="4"> <app-contact></app-contact> </a>
     <a *ngSwitchCase="5"> <app-login></app-login> </a>
+    <a *ngSwitchCase="6"> <app-signup></app-signup> </a>
   </container-element>
 
 </div>
