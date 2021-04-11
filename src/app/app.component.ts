@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'RapData-Ui';
 
   ngOnInit(): void {
-    this.currentView = 3;
+    this.currentView = 4;
   }
 
   // tslint:disable-next-line:typedef

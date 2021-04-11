@@ -1,1 +1,30 @@
-<p>contact works!</p>
+<body class="bg-white">
+  <div class="flex min-h-screen bg-white">
+    <div class="w-1/2 bg-cover md:block hidden" style="background-image:  url(assets/nepal_vert.jpg)"></div>
+
+    <div class="md:w-1/2 max-w-lg mx-auto my-24 px-4 py-5 shadow-none">
+      <div class="text-left p-0 font-sans">
+        <h1 class=" text-gray-800 text-3xl font-medium">Contact us</h1>
+        <h3 class="p-1 text-gray-700">If you have any questions, or want to report some bugs.</h3>
+      </div>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="p-0">
+        <div class="mt-5">
+          <label for="email" class="sc-bqyKva ePvcBv">Your email</label>
+          <input id="email" type="text" formControlName="email" class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent" placeholder="Email">
+        </div>
+        <div class="mt-5">
+          <label for="pseudo" class="sc-bqyKva ePvcBv">Your Pseudo</label>
+          <input id="pseudo" type="text" formControlName="pseudo" class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent " placeholder="Pseudo">
+        </div>
+        <div class="mt-5">
+          <label for="comment" class="sc-bqyKva ePvcBv">What Happened ?</label>
+          <textarea id="comment" formControlName="comment" class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent"></textarea>
+        </div>
+        <div *ngIf="isSubmitted">Thanks for your comment ! We will contact you soon.</div>
+        <div class="mt-10">
+          <input type="submit" value="Send" class="py-3 bg-green-500 text-white w-full rounded hover:bg-green-600">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
