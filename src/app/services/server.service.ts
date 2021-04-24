@@ -1,14 +1,14 @@
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import {Injectable} from '@angular/core';
-import {tap} from 'rxjs/operators';
+import {catchError, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class ServerService {
-  private URL = 'https://127.0.0.1:8000/api/';
+  private URL = 'http://127.0.0.1:8000/api/';
   private KEY = 'e3f00a940d2d8385723d7e058afef9b6f3a7cde6';
 
   httpOptions = {
@@ -19,6 +19,7 @@ export class ServerService {
 
   constructor(private http: HttpClient) {}
 
+  // tslint:disable-next-line:typedef
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -43,14 +44,10 @@ export class ServerService {
       comment
     };
     mailUrl = this.URL + 'sendMail/';
-    console.log(mailUrl);
-    return this.http.post<number>(mailUrl, this.httpOptions).pipe(tap(result => {
-      if (result){
-        return 1;
-      } else{
-        return 2;
-      }
-    }));
+    console.log(body);
+    return this.http.post<number>(mailUrl, body, this.httpOptions).pipe(
+      catchError(this.handleError)
+    );
   }
 
 }

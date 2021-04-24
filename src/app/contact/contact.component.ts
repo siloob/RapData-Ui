@@ -35,19 +35,18 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(): void{
-    let mailSended: Observable<number>;
     if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
-      mailSended = this.serverService.sendMail(
+      this.serverService.sendMail(
         this.contactForm.value.email,
         this.contactForm.value.pseudo,
         this.contactForm.value.comment
-      );
-      // @ts-ignore
-      if (mailSended === 1){
+      ).subscribe((result: number) => {
+        console.log('result:' + result);
+        if (result === 1){
           this.contactForm.reset();
           this.isSubmitted = true;
-      }
+        }
+      });
     }
   }
 }
