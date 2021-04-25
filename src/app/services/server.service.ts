@@ -1,5 +1,5 @@
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http';
+import {Observable, ObservableInput, throwError} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {catchError, tap} from 'rxjs/operators';
 
@@ -11,11 +11,9 @@ export class ServerService {
   private URL = 'http://127.0.0.1:8000/api/';
   private KEY = 'e3f00a940d2d8385723d7e058afef9b6f3a7cde6';
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      Authorization: 'Token ' + this.KEY
-    })
-  };
+  private httpHeaders = new HttpHeaders({
+    Authorization: 'Token ' + this.KEY
+  });
 
   constructor(private http: HttpClient) {}
 
@@ -36,7 +34,7 @@ export class ServerService {
       'Something bad happened; please try again later.');
   }
 
-  sendMail(email: string, pseudo: string, comment: string): Observable<number>{
+  sendMail(email: string, pseudo: string, comment: string): Observable<string>{
     let mailUrl: string;
     const body: any = {
       email,
@@ -45,9 +43,23 @@ export class ServerService {
     };
     mailUrl = this.URL + 'sendMail/';
     console.log(body);
-    return this.http.post<number>(mailUrl, body, this.httpOptions).pipe(
+    return this.http.post<any>(mailUrl, body, {headers: this.httpHeaders}).pipe(
       catchError(this.handleError)
     );
+  }
+
+  register(email: string, pseudo: string, password: string): Observable<HttpResponse<any>>{
+    let userUrl: string;
+    const body: any = {
+      email,
+      pseudo,
+      password
+    };
+    userUrl = this.URL + 'user/';
+    return this.http.post<any>(userUrl, body, {
+      headers: this.httpHeaders,
+      observe: 'response'
+    });
   }
 
 }

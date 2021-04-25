@@ -1,1 +1,49 @@
-<p>signup works!</p>
+<body class="bg-white">
+<div class="flex min-h-screen bg-white">
+  <div class="md:w-1/2 max-w-lg mx-auto my-24 px-4 py-5 shadow-none">
+    <div class="text-left p-0 font-sans">
+      <h1 class=" text-gray-800 text-3xl font-medium">Sign up</h1>
+      <h3 class="p-1 text-gray-700">and get your token</h3>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="p-0">
+      <div class="mt-5">
+        <label for="email" class="sc-bqyKva ePvcBv">Email</label>
+        <input id="email" type="text" formControlName="email" class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent" placeholder="Email">
+        <div *ngIf="isSubmitted && loginForm.controls.email.errors">
+          <div *ngIf="loginForm.controls.email.errors.required" class="text-red-500">Email is required.</div>
+          <div *ngIf="loginForm.controls.email.errors.email" class="text-red-500">It doesn't look like an email !</div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <label for="pseudo" class="sc-bqyKva ePvcBv">Pseudo</label>
+        <input id="pseudo" type="text" formControlName="pseudo" class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent " placeholder="Pseudo">
+        <div *ngIf="isSubmitted && loginForm.controls.pseudo.errors" >
+          <div *ngIf="loginForm.controls.pseudo.errors.required" class="text-red-500">Pseudo is required.</div>
+          <div *ngIf="loginForm.controls.pseudo.errors.minlength" class="text-red-500">Pseudo should had more than 3 characteres.</div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <label for="password" class="sc-bqyKva ePvcBv">Password</label>
+        <input id="password" type="password" formControlName="password" class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent">
+        <div *ngIf="isSubmitted && loginForm.controls.password.errors">
+          <div *ngIf="loginForm.controls.password.errors.required" class="text-red-500">Password is required.</div>
+          <div *ngIf="loginForm.controls.password.errors.minlength" class="text-red-500">Password should had more than 8 characteres.</div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <label for="confirm_password" class="sc-bqyKva ePvcBv">Password</label>
+        <input id="confirm_password" type="password" formControlName="confirm_password" class="block w-full p-2 border rounded border-grayw-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent">
+        <div *ngIf="isSubmitted && loginForm.controls.confirm_password.errors">
+          <div *ngIf="loginForm.controls.confirm_password.errors.required" class="text-red-500">Password is required.</div>
+          <div *ngIf="loginForm.controls.confirm_password.errors.mustMatch" class="text-red-500">Both passwords doesn't match !</div>
+        </div>
+      </div>
+      <div *ngIf="isSend">Thanks ! Now open your emails to confirm your account and get your tokens.</div>
+      <div class="mt-10">
+        <input type="submit" value="Send" class="py-3 bg-green-500 text-white w-full rounded hover:bg-green-600">
+      </div>
+    </form>
+  </div>
+  <div class="w-1/2 bg-cover md:block hidden" style="background-image:  url(assets/nepal_vert.jpg)"></div>
+</div>
+</body>
