@@ -7,7 +7,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { TarifComponent } from './tarif/tarif.component';
 import { ContactComponent } from './contact/contact.component';
-import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
     DocumentationComponent,
     TarifComponent,
     ContactComponent,
-    LoginComponent,
     SignupComponent
   ],
   imports: [

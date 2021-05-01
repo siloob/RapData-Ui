@@ -1,89 +1,75 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
-<div class="py-12 bg-cover" [style.backgroundImage]="'url('+ urlImage +')'">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:text-center">
-      <h2 class="text-4xl text-green-500 font-semibold tracking-wide uppercase">RAPDATA</h2>
-      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight {{titleColor}} sm:text-4xl">
-        La plus grande base de données sur le rap francais
-      </p>
-      <p class="mt-4 max-w-2xl text-xl {{titleColor}} lg:mx-auto">
-        Des dizaines de milliers de données à votre disposition
-      </p>
-    </div>
-
-    <div class="mt-10">
-      <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10n">
-        <div class="relative">
-          <dt>
-            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
-              <!-- Heroicon name: outline/globe-alt -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-              </svg>
-            </div>
-            <p class="ml-16 text-lg leading-6 font-medium {{titleColor}}">Plus de 2000 artistes</p>
-          </dt>
-          <dd class="mt-2 ml-16 text-base {{textColor}}">
-            Aujourd'hui nous avons près de 2200 artistes en bases avec des données de tout types les concernants comme leurs liens vers leurs réseaux sociaux, leur nombre d'abonnées, leur nombre de distinction, et bien d'autres encore.
-          </dd>
-        </div>
-
-        <div class="relative">
-          <dt>
-            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
-              <!-- Heroicon name: outline/scale -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </div>
-            <p class="ml-16 text-lg leading-6 font-medium {{titleColor}}">Agrémentez vos activités par des données fiables et pertinentes</p>
-          </dt>
-          <dd class="mt-2 ml-16 text-base {{textColor}}">
-            Nos données sont mis à jour très régulièrement afin d'etre le plus à jours possible afind e vous proposer des informations les plus pertinentes possibles.
-          </dd>
-        </div>
-
-        <div class="relative">
-          <dt>
-            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
-              <!-- Heroicon name: outline/lightning-bolt -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <p class="ml-16 text-lg leading-6 font-medium {{titleColor}}">Des outils de récupération de données automatisés</p>
-          </dt>
-          <dd class="mt-2 ml-16 text-base {{textColor}}">
-            Rapdata ce n'est pas que des données, c'est toute une technologie de automatisée de recherche et de récupération de données.
-          </dd>
-        </div>
-
-        <div class="relative">
-          <dt>
-            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
-              <!-- Heroicon name: outline/annotation -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
-            </div>
-            <p class="ml-16 text-lg leading-6 font-medium {{titleColor}}">Une amélioration constante et régulière</p>
-          </dt>
-          <dd class="mt-2 ml-16 text-base {{textColor}}">
-            Cette automatisation nous permet de mobiliser 100% de nos ressources pour améliorer nos services que ce soit au niveau des données ou des fonctionnalitées que nous proposons.
-          </dd>
-        </div>
-      </dl>
-    </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="lg:text-center">
+    <h2 class="text-4xl text-mytitle font-semibold tracking-wide uppercase">RAPDATA</h2>
+    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-mytitle sm:text-4xl">
+      La plus grande base de données sur le rap francais
+    </p>
+    <p class="mt-4 max-w-2xl text-xl text-mytitle lg:mx-auto">
+      Des dizaines de milliers de données à votre disposition
+    </p>
   </div>
 
+  <div class="mt-10">
+    <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10n">
+      <div class="relative">
+        <dt>
+          <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+            <!-- Heroicon name: outline/globe-alt -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+            </svg>
+          </div>
+          <p class="ml-16 text-lg leading-6 font-medium text-mytitle">Plus de 2000 artistes</p>
+        </dt>
+        <dd class="mt-2 ml-16 text-base {{textColor}}">
+          Aujourd'hui nous avons près de 2200 artistes en bases avec des données de tout types les concernants comme leurs liens vers leurs réseaux sociaux, leur nombre d'abonnées, leur nombre de distinctions, et bien d'autres.
+        </dd>
+      </div>
 
-  <footer>
-    <div class="py-12 flex items-center justify-center flex-shrink-3">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-        <a href="https://www.instagram.com/roxanepeyronnenc">https://www.instagram.com/roxanepeyronnenc</a>
-    </div>
-    </footer>
+      <div class="relative">
+        <dt>
+          <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+            <!-- Heroicon name: outline/scale -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <p class="ml-16 text-lg leading-6 font-medium text-mytitle">Agrémentez vos activités par des données fiables et pertinentes</p>
+        </dt>
+        <dd class="mt-2 ml-16 text-base {{textColor}}">
+          Nos données sont mis à jour très régulièrement afin d'etre le plus à jours possible afind e vous proposer des informations les plus pertinentes possibles.
+        </dd>
+      </div>
+
+      <div class="relative">
+        <dt>
+          <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+            <!-- Heroicon name: outline/lightning-bolt -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <p class="mt-5 ml-16 text-lg leading-6 font-medium text-mytitle">Des outils de récupération de données automatisés</p>
+        </dt>
+        <dd class="mt-2 ml-16 text-base {{textColor}}">
+          Rapdata ce n'est pas que des données, c'est toute une technologie d'automatisation de recherche intélligente et de récupération de données qui permet de rendre un service unique.
+        </dd>
+      </div>
+
+      <div class="relative">
+        <dt>
+          <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+            <!-- Heroicon name: outline/annotation -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+          <p class="mt-5 ml-16 text-lg leading-6 font-medium text-mytitle">Une amélioration constante et régulière</p>
+        </dt>
+        <dd class="mt-2 ml-16 text-base {{textColor}}">
+          Cette automatisation nous permet de mobiliser 100% de nos ressources pour améliorer nos services que ce soit au niveau des données ou des fonctionnalitées que nous proposons.
+        </dd>
+      </div>
+    </dl>
+  </div>
 </div>

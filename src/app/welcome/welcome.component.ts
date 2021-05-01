@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
   public urlImage = '';
-  public titleColor = '';
   public textColor = '';
 
   constructor() { }
@@ -15,7 +14,6 @@ export class WelcomeComponent implements OnInit {
   ngOnInit(): void {
     this.urlImage = 'assets/nepal.jpg';
     this.textColor = 'text-gray-800';
-    this.titleColor = 'text-black';
   }
 
 }

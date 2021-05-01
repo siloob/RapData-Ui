@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +12,14 @@ export class AppComponent implements OnInit {
   public currentView: number | undefined;
   title = 'RapData-Ui';
 
+  constructor() {}
+
   ngOnInit(): void {
-    this.currentView = 4;
+    this.currentView = 1;
   }
 
-  // tslint:disable-next-line:typedef
-  public goTo(nextView: number){
+  public goTo(nextView: number): void{
     this.currentView = nextView;
+    console.log(this.currentView);
   }
 }
