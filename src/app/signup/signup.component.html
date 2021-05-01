@@ -32,15 +32,15 @@
       </div>
       <div class="mt-5">
         <label for="confirm_password" class="sc-bqyKva ePvcBv">Password</label>
-        <input id="confirm_password" type="password" formControlName="confirm_password" class="block w-full p-2 border rounded border-grayw-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent">
+        <input id="confirm_password" type="password" formControlName="confirm_password" class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent">
         <div *ngIf="isSubmitted && loginForm.controls.confirm_password.errors">
           <div *ngIf="loginForm.controls.confirm_password.errors.required" class="text-red-500">Password is required.</div>
           <div *ngIf="loginForm.controls.confirm_password.errors.mustMatch" class="text-red-500">Both passwords doesn't match !</div>
         </div>
       </div>
-      <div *ngIf="isSend">Thanks ! Now open your emails to confirm your account and get your tokens.</div>
+      <div *ngIf="isSend" class="text-green-500">Thanks ! You will receive your token soon by email.</div>
       <div class="mt-10">
-        <input type="submit" value="Send" class="py-3 bg-green-500 text-white w-full rounded hover:bg-green-600">
+        <input type="submit" value="Send" class="py-3 text-green-500 bg-gray-800 hover:bg-green-500 hover:text-white text-white w-full rounded">
       </div>
     </form>
   </div>

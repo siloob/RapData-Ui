@@ -1,41 +1,14 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
-<div class="py-12 bg-cover" [style.backgroundImage]="'url(assets/nepal_vert.jpg)'">
   <table class="table-fixed ml-4">
     <tbody>
-    <tr class="border-b-2 border-green-500">
-      <td class="w-1/4">
-        <div class="text-sm text-black">Récupérer son token</div>
-      <td>
-      <td class="w-1/4 border-l-2 border-green-500">
-        <div class="text-sm text-black">
-          POST api/token<br>
-          Body :
-          <pre>
-            <code>
-{{ '{' }}
-  "username": "admin",
-  "password": "admin"
-}
-            </code>
-          </pre>
-        </div>
-      </td>
-      <td class="w-2/4 text-black border-l-2 border-green-500"><pre><code>Response:<br>
-{{ '{' }}
-  "token": "46a61f559102745e431444c057db3e9dbd558907"
-}
-          </code>
-        </pre>
-      </td>
-    </tr>
-    <tr class="border-green-500">
+    <tr class="border-gray-800">
       <td class="w-1/4">
         <div class="text-sm text-black">Récupérer les artists</div>
       <td>
-      <td class="w-1/4 border-l-2 border-green-500">
-        <div class="text-sm text-black">GET api/artists</div>
+      <td class="w-1/4 border-l-2 border-gray-800">
+        <div class="text-sm text-black">GET | api/artists</div>
+        <div class="text-sm text-black">HEADER | Authorization: Token your_token</div>
       </td>
-      <td class="w-2/4 text-black border-l-2 border-green-500"><pre><code><br>
+      <td class="w-2/4 text-black border-l-2 border-gray-800"><pre><code><br>
 {{ '{' }}
   "count": 2230,
   "next": "http://localhost:8000/api/artists?page=2",
@@ -62,4 +35,3 @@
     <!-- More items... -->
     </tbody>
   </table>
-</div>
