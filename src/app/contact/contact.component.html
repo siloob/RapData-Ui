@@ -11,18 +11,29 @@
         <div class="mt-5">
           <label for="email" class="sc-bqyKva ePvcBv">Your email</label>
           <input id="email" type="text" formControlName="email" class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent" placeholder="Email">
+          <div *ngIf="isSubmitted && contactForm.controls.email.errors">
+            <div *ngIf="contactForm.controls.email.errors.required" class="text-red-500">Email is required.</div>
+            <div *ngIf="contactForm.controls.email.errors.email" class="text-red-500">It doesn't look like an email !</div>
+          </div>
         </div>
         <div class="mt-5">
           <label for="pseudo" class="sc-bqyKva ePvcBv">Your Pseudo</label>
           <input id="pseudo" type="text" formControlName="pseudo" class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent " placeholder="Pseudo">
+          <div *ngIf="isSubmitted && contactForm.controls.pseudo.errors" >
+            <div *ngIf="contactForm.controls.pseudo.errors.required" class="text-red-500">Pseudo is required.</div>
+            <div *ngIf="contactForm.controls.pseudo.errors.minlength" class="text-red-500">Pseudo should had more than 3 characteres.</div>
+          </div>
         </div>
         <div class="mt-5">
           <label for="comment" class="sc-bqyKva ePvcBv">What Happened ?</label>
           <textarea id="comment" formControlName="comment" class="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent"></textarea>
+          <div *ngIf="isSubmitted && contactForm.controls.comment.errors" >
+            <div *ngIf="contactForm.controls.comment.errors.required" class="text-red-500">Comment field must not be empty.</div>
+          </div>
         </div>
-        <div *ngIf="isSubmitted">Thanks for your comment ! We will contact you soon.</div>
+        <div *ngIf="isSend" class="text-green-500">Thanks for your comment ! We will contact you soon.</div>
         <div class="mt-10">
-          <input type="submit" value="Send" class="py-3 bg-green-500 text-white w-full rounded hover:bg-green-600">
+          <input type="submit" value="Send" class="py-3 text-green-500 bg-gray-800 hover:bg-green-500 hover:text-white text-white w-full rounded">
         </div>
       </form>
     </div>

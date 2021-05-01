@@ -27,6 +27,7 @@ export class ContactComponent implements OnInit {
   });
 
   isSubmitted = false;
+  isSend = false;
 
   constructor(private formBuilder: FormBuilder,
               private serverService: ServerService) {}
@@ -35,16 +36,17 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(): void{
+    this.isSubmitted = true;
     if (this.contactForm.valid) {
       this.serverService.sendMail(
         this.contactForm.value.email,
         this.contactForm.value.pseudo,
         this.contactForm.value.comment
-      ).subscribe((result: number) => {
+      ).subscribe((result: string) => {
         console.log('result:' + result);
-        if (result === 1){
+        if (result === '1'){
           this.contactForm.reset();
-          this.isSubmitted = true;
+          this.isSend = true;
         }
       });
     }
